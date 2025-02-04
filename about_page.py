@@ -14,7 +14,7 @@ def show_about_page():
         
     with col2:
         # Update the image file path to use an existing file
-        st.image("assets/images/test1.jpeg", width=300, caption="Hello from Rodrigues!")
+        st.image("assets/images/main-rodrigues.jpg", width=300, caption="Hello from Rodrigues!")
 
     st.write("---")
     
@@ -33,10 +33,10 @@ def show_about_page():
     col1, col2 = st.columns(2)
     with col1:
         # Update to use another existing file
-        st.image("assets/images/test2.jpg", caption="Data Cleaning Process")
+        st.image("assets/images/jupyter-notebook.png", caption="Data Cleaning Process")
     with col2:
         # If you don't have another image, you might repeat the same or remove this
-        st.image("assets/images/test1.jpeg", caption="Model Building Process")
+        st.image("assets/images/vs-bulding.png", caption="Model Building Process")
     
     st.write("---")
     st.header("Why this project?")
@@ -49,10 +49,17 @@ def show_about_page():
     st.write("---")
     st.header("Connect with Me")
     st.markdown("""
-    - **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/Allahurodrigues)
-    - **GitHub**: [Your GitHub](https://github.com)
-    - **Resume**: [Download my Resume](link_to_your_resume.pdf)
+    - **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/allahu-rodrigues)
+    - **GitHub**: [Your GitHub](https://github.com/AllahuRodrigues)
     """)
+    
+    with open("Rodrigues_Allah-u-abha_Resume.pdf", "rb") as file:
+        btn = st.download_button(
+            label="Download my Resume",
+            data=file,
+            file_name="Rodrigues_Allah-u-abha_Resume.pdf",
+            mime="application/octet-stream"
+        )
     
     if st.button('Show More About the Project'):
         with st.expander("See Explanation"):
@@ -60,7 +67,7 @@ def show_about_page():
             Detailed explanation about the project methodologies, data handling, challenges faced,
             and solutions implemented.
             """)
-            st.image("assets/images/test2.jpg", caption="In-depth Methodology")
+            st.image("assets/images/explore-menu.png", caption="In-depth Methodology")
 
 if __name__ == "__main__":
     show_about_page()
